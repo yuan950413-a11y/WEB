@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>未來規劃 — 吳育安</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Noto+Sans+TC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    .page-hero{padding:64px 0 0}
+    .page-hero-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+
+    /* Plan cards */
+    .plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
+    .plan-card{
+      background:var(--bg-card);border:1px solid var(--line);
+      border-radius:var(--r);padding:26px;
+      transition:border-color .22s,transform .22s;
+    }
+    .plan-card:hover{border-color:rgba(232,124,58,.35);transform:translateY(-2px)}
+    .plan-icon{font-size:2rem;margin-bottom:12px}
+    .plan-title{font-family:var(--ff-head);font-size:1.05rem;color:var(--text);margin-bottom:14px}
+    .plan-list li{
+      padding:7px 0 7px 14px;position:relative;
+      font-size:.84rem;color:var(--text2);
+      border-bottom:1px solid rgba(255,255,255,.04);
+    }
+    .plan-list li:last-child{border-bottom:none}
+    .plan-list li::before{content:'·';position:absolute;left:0;color:var(--accent);font-size:1.1rem;line-height:1.5}
+
+    /* Roadmap */
+    .roadmap{
+      background:var(--bg-card);border:1px solid var(--line);
+      border-radius:var(--r);padding:30px;margin-top:32px;
+    }
+    .roadmap-title{font-family:var(--ff-head);font-size:1.1rem;color:var(--text);margin-bottom:24px}
+    .rm-steps{display:flex;gap:0;overflow-x:auto;padding-bottom:4px}
+    .rm-step{
+      flex:1;min-width:160px;
+      padding:18px;
+      border-right:1px solid var(--line);
+      position:relative;
+      transition:background .2s;
+    }
+    .rm-step:last-child{border-right:none}
+    .rm-step:hover{background:var(--bg-raised)}
+    .rm-step-sem{
+      font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--accent);margin-bottom:10px;
+    }
+    .rm-step-goal{
+      font-family:var(--ff-head);font-size:.92rem;color:var(--text);
+      margin-bottom:8px;
+    }
+    .rm-step-items{font-size:.78rem;color:var(--text2);line-height:1.7}
+    .rm-connector{
+      position:absolute;right:-1px;top:50%;transform:translateY(-50%);
+      width:1px;height:40%;background:var(--line);
+    }
+
+    /* Weakness → Plan */
+    .weakness-section{
+      background:var(--bg-card);border:1px solid var(--line);
+      border-radius:var(--r);padding:28px;margin-top:20px;
+    }
+    .ws-row{
+      display:grid;grid-template-columns:1fr auto 1fr;
+      align-items:center;gap:16px;padding:12px 0;
+      border-bottom:1px solid rgba(255,255,255,.04);
+    }
+    .ws-row:last-child{border-bottom:none}
+    .ws-from{font-size:.85rem;color:var(--red)}
+    .ws-arrow{color:var(--accent);font-size:1.2rem;text-align:center}
+    .ws-to{font-size:.85rem;color:var(--green)}
+
+    @media(max-width:768px){
+      .plan-grid{grid-template-columns:1fr}
+      .rm-steps{flex-direction:column}
+      .rm-step{border-right:none;border-bottom:1px solid var(--line)}
+      .rm-step:last-child{border-bottom:none}
+      .ws-row{grid-template-columns:1fr}
+      .ws-arrow{text-align:left}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">吳育安</a>
+    <div class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="ucan.html">UCAN 診斷</a>
+      <a href="job.html">目標職缺</a>
+      <a href="resume.html">自傳履歷</a>
+      <a href="plan.html">未來規劃</a>
+    </div>
+    <button class="nav-burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer">
+    <a href="index.html">首頁</a>
+    <a href="ucan.html">UCAN 診斷</a>
+    <a href="job.html">目標職缺</a>
+    <a href="resume.html">自傳履歷</a>
+    <a href="plan.html">未來規劃</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="wrap">
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <div>
+          <p class="eyebrow">04 — 未來規劃</p>
+          <h1 class="sec-title">能力養成計畫</h1>
+          <p class="sec-sub">以 UCAN 診斷結果為基礎，針對弱項制定具體的課程、證照與實務補強方案。</p>
+        </div>
+        <div>
+          <a href="resume.html" class="btn btn-outline">← 自傳履歷</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="sec">
+
+      <!-- Weakness → Action -->
+      <div class="weakness-section reveal">
+        <p class="eyebrow" style="margin-bottom:16px">弱項識別 → 改善行動</p>
+        <div class="ws-row">
+          <div class="ws-from">⚠ 系統分析能力偏弱（2.50）</div>
+          <div class="ws-arrow">→</div>
+          <div class="ws-to">✓ 選修系統分析與設計課程 + UML 自學</div>
+        </div>
+        <div class="ws-row">
+          <div class="ws-from">⚠ 程式開發及撰寫（3.20）需提升</div>
+          <div class="ws-arrow">→</div>
+          <div class="ws-to">✓ Python 自學、參加 Hackathon 實戰</div>
+        </div>
+        <div class="ws-row">
+          <div class="ws-from">⚠ 溝通表達（3.86）為中等能力</div>
+          <div class="ws-arrow">→</div>
+          <div class="ws-to">✓ 加入社團、擔任活動主持增加簡報機會</div>
+        </div>
+      </div>
+
+      <!-- Plan cards -->
+      <div class="plan-grid reveal">
+        <div class="plan-card">
+          <div class="plan-icon">📚</div>
+          <div class="plan-title">修課規劃</div>
+          <ul class="plan-list">
+            <li>系統分析與設計（補強需求分析弱項）</li>
+            <li>資料庫管理與 SQL 進階應用</li>
+            <li>資訊安全概論</li>
+            <li>企業資源規劃（ERP 系統）</li>
+            <li>專案管理（PMP 概念）</li>
+            <li>Linux 作業系統管理</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-icon">🏆</div>
+          <div class="plan-title">目標證照</div>
+          <ul class="plan-list">
+            <li>CompTIA A+（IT 維運基礎）</li>
+            <li>TQC+ 資料庫應用工程師</li>
+            <li>資訊安全工程師（IPAS）</li>
+            <li>MTA：IT Infrastructure（微軟入門）</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-icon">🛠</div>
+          <div class="plan-title">技術自學</div>
+          <ul class="plan-list">
+            <li>Python 自動化腳本（批次、報表）</li>
+            <li>Linux 基礎指令與伺服器管理</li>
+            <li>Git / GitHub 版本控制</li>
+            <li>網路設定與故障排除（CCNA 概念）</li>
+            <li>Windows Server 管理實作</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-icon">🌱</div>
+          <div class="plan-title">實務經驗累積</div>
+          <ul class="plan-list">
+            <li>申請學校資訊中心工讀，熟悉 IT 支援流程</li>
+            <li>加入資管系學會，負責系統維護與網站管理</li>
+            <li>大三參加 MIS 相關業界實習</li>
+            <li>參與校內資訊競賽或黑客松</li>
+            <li>持續維護個人 GitHub，累積專案作品</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Roadmap -->
+      <div class="roadmap reveal">
+        <div class="roadmap-title">時程規劃路線圖</div>
+        <div class="rm-steps">
+          <div class="rm-step">
+            <div class="rm-step-sem">大二下學期</div>
+            <div class="rm-step-goal">建立基礎</div>
+            <div class="rm-step-items">
+              選修系統分析<br>
+              Python 自學入門<br>
+              考取 TQC+ 資料庫<br>
+              Git 版本控制上手
+            </div>
+          </div>
+          <div class="rm-step">
+            <div class="rm-step-sem">大三上學期</div>
+            <div class="rm-step-goal">強化技術</div>
+            <div class="rm-step-items">
+              ERP、資安課程<br>
+              考取 CompTIA A+<br>
+              學校資訊中心工讀<br>
+              Linux 實作練習
+            </div>
+          </div>
+          <div class="rm-step">
+            <div class="rm-step-sem">大三下學期</div>
+            <div class="rm-step-goal">業界歷練</div>
+            <div class="rm-step-items">
+              MIS 業界實習<br>
+              IPAS 資安認證<br>
+              整合性專題製作<br>
+              建立個人作品集
+            </div>
+          </div>
+          <div class="rm-step">
+            <div class="rm-step-sem">大四</div>
+            <div class="rm-step-goal">求職衝刺</div>
+            <div class="rm-step-items">
+              畢業專題完成<br>
+              履歷 & 面試準備<br>
+              取得 MIS Offer<br>
+              順利職場起步
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div style="display:flex;justify-content:center;gap:14px;padding:0 0 70px;flex-wrap:wrap">
+      <a href="index.html" class="btn btn-outline">← 回首頁</a>
+      <a href="ucan.html" class="btn btn-fill">重看 UCAN 診斷</a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>吳育安 · 靜宜大學資訊管理學系 · 411312618</p>
+    <p>本網站為職涯規劃作業，部署於 Vercel · © 2026</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

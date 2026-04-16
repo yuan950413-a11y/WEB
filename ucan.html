@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>UCAN 診斷 — 吳育安</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Noto+Sans+TC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    .page-hero{padding:64px 0 0}
+    .page-hero-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+    .page-nav{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* Holland badge */
+    .holland{
+      display:flex;align-items:center;gap:20px;
+      padding:24px;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);
+      margin-bottom:20px;
+    }
+    .holland-code{
+      font-family:var(--ff-head);font-size:4rem;font-weight:700;
+      color:var(--accent);line-height:1;flex-shrink:0;
+    }
+    .holland-desc p{font-size:.84rem;color:var(--text2);margin-bottom:4px}
+    .holland-desc strong{color:var(--text);font-size:.88rem}
+
+    /* Interest bars */
+    .interest-section{margin-top:40px}
+    .interest-bar-row{
+      display:flex;align-items:center;gap:12px;margin-bottom:10px;
+    }
+    .ib-label{width:180px;flex-shrink:0;font-size:.82rem;color:var(--text2)}
+    .ib-track{flex:1;height:6px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+    .ib-fill{height:100%;border-radius:999px;width:0;transition:width 1.1s var(--ease)}
+    .ib-pr{font-family:var(--ff-mono);font-size:.72rem;color:var(--text3);width:36px;text-align:right}
+    .ib-row-hi .ib-label{color:var(--text)}
+    .ib-row-hi .ib-fill{background:var(--accent)}
+    .ib-fill-dim{background:var(--bg-raised)}
+
+    /* layout */
+    .ucan-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+    .ucan-full{grid-column:1/-1}
+
+    @media(max-width:768px){
+      .ucan-layout{grid-template-columns:1fr}
+      .ucan-full{grid-column:1}
+      .ib-label{width:130px}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">吳育安</a>
+    <div class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="ucan.html">UCAN 診斷</a>
+      <a href="job.html">目標職缺</a>
+      <a href="resume.html">自傳履歷</a>
+      <a href="plan.html">未來規劃</a>
+    </div>
+    <button class="nav-burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer">
+    <a href="index.html">首頁</a>
+    <a href="ucan.html">UCAN 診斷</a>
+    <a href="job.html">目標職缺</a>
+    <a href="resume.html">自傳履歷</a>
+    <a href="plan.html">未來規劃</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="wrap">
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <div>
+          <p class="eyebrow">01 — UCAN 職能診斷</p>
+          <h1 class="sec-title">診斷結果總覽</h1>
+          <p class="sec-sub">涵蓋職業興趣探索、職場共通職能、專業職能三項診斷，了解自身優勢與成長空間。</p>
+        </div>
+        <div class="page-nav">
+          <a href="job.html" class="btn btn-outline">下一頁：目標職缺 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 職業興趣 -->
+    <section class="sec reveal">
+      <p class="eyebrow">職業興趣探索 · 2024.09.02</p>
+      <h2 style="font-family:var(--ff-head);font-size:1.6rem;margin-bottom:24px">職業性格代碼</h2>
+
+      <div class="holland">
+        <div class="holland-code">IS</div>
+        <div class="holland-desc">
+          <p><strong>研究型（I）</strong>　喜歡運用頭腦，善於觀察、思考、分析與推理，追根究柢解決問題，偏好與符號、概念、文字相關的工作。</p>
+          <p style="margin-top:10px"><strong>社會型（S）</strong>　對人親切和善，體恤他人，喜歡傾聽和了解他人，善於運用人際能力教導或幫助他人。</p>
+        </div>
+      </div>
+
+      <div class="interest-section bar-group">
+        <p style="font-size:.82rem;color:var(--text3);margin-bottom:16px;font-family:var(--ff-mono);letter-spacing:.05em">16 職涯類型興趣強度 PR 值（深色為前段）</p>
+
+        <div class="interest-bar-row ib-row-hi">
+          <span class="ib-label">天然資源、食品與農業</span>
+          <div class="ib-track"><div class="ib-fill" data-w="86%"></div></div>
+          <span class="ib-pr">PR86</span>
+        </div>
+        <div class="interest-bar-row ib-row-hi">
+          <span class="ib-label">科學、技術、工程、數學</span>
+          <div class="ib-track"><div class="ib-fill" data-w="83%"></div></div>
+          <span class="ib-pr">PR83</span>
+        </div>
+        <div class="interest-bar-row ib-row-hi">
+          <span class="ib-label">行銷與銷售</span>
+          <div class="ib-track"><div class="ib-fill" data-w="73%"></div></div>
+          <span class="ib-pr">PR73</span>
+        </div>
+        <div class="interest-bar-row ib-row-hi">
+          <span class="ib-label">醫療保健</span>
+          <div class="ib-track"><div class="ib-fill" data-w="71%"></div></div>
+          <span class="ib-pr">PR71</span>
+        </div>
+        <div class="interest-bar-row ib-row-hi">
+          <span class="ib-label">資訊科技</span>
+          <div class="ib-track"><div class="ib-fill" data-w="64%"></div></div>
+          <span class="ib-pr">PR64</span>
+        </div>
+        <div class="interest-bar-row">
+          <span class="ib-label">金融財務</span>
+          <div class="ib-track"><div class="ib-fill ib-fill-dim" data-w="64%"></div></div>
+          <span class="ib-pr">PR64</span>
+        </div>
+        <div class="interest-bar-row">
+          <span class="ib-label">休閒與觀光旅遊</span>
+          <div class="ib-track"><div class="ib-fill ib-fill-dim" data-w="60%"></div></div>
+          <span class="ib-pr">PR60</span>
+        </div>
+        <div class="interest-bar-row">
+          <span class="ib-label">個人及社會服務</span>
+          <div class="ib-track"><div class="ib-fill ib-fill-dim" data-w="52%"></div></div>
+          <span class="ib-pr">PR52</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="div">
+
+    <!-- 共通職能 -->
+    <section class="sec reveal">
+      <p class="eyebrow">職場共通職能 · 2024.09.02</p>
+      <h2 style="font-family:var(--ff-head);font-size:1.6rem;margin-bottom:8px">8 項共通職能</h2>
+      <p style="font-size:.84rem;color:var(--text2);margin-bottom:28px">滿分 5 分，優勢能力門檻：4.5 分以上</p>
+
+      <div class="bar-group">
+        <div class="bar-row">
+          <span class="bar-label">資訊科技應用</span>
+          <div class="bar-track"><div class="bar-fill" data-w="92.6%" style="background:var(--accent)"></div></div>
+          <span class="bar-score">4.63 <span class="badge badge-accent" style="margin-left:4px">優勢</span></span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">人際互動</span>
+          <div class="bar-track"><div class="bar-fill" data-w="90%" style="background:var(--green)"></div></div>
+          <span class="bar-score">4.50 <span class="badge badge-green" style="margin-left:4px">優勢</span></span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">團隊合作</span>
+          <div class="bar-track"><div class="bar-fill" data-w="88.6%" style="background:var(--green)"></div></div>
+          <span class="bar-score">4.43 <span class="badge badge-green" style="margin-left:4px">優勢</span></span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">工作責任及紀律</span>
+          <div class="bar-track"><div class="bar-fill" data-w="88.6%" style="background:var(--green)"></div></div>
+          <span class="bar-score">4.43 <span class="badge badge-green" style="margin-left:4px">優勢</span></span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">持續學習</span>
+          <div class="bar-track"><div class="bar-fill" data-w="85.8%" style="background:var(--blue)"></div></div>
+          <span class="bar-score">4.29</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">創新</span>
+          <div class="bar-track"><div class="bar-fill" data-w="83.4%" style="background:var(--blue)"></div></div>
+          <span class="bar-score">4.17</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">問題解決</span>
+          <div class="bar-track"><div class="bar-fill" data-w="80%" style="background:var(--blue)"></div></div>
+          <span class="bar-score">4.00</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">溝通表達</span>
+          <div class="bar-track"><div class="bar-fill" data-w="77.2%" style="background:var(--amber)"></div></div>
+          <span class="bar-score">3.86</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="div">
+
+    <!-- 專業職能 -->
+    <section class="sec reveal">
+      <p class="eyebrow">專業職能 · 軟體開發及程式設計 · 2026.03.04</p>
+      <h2 style="font-family:var(--ff-head);font-size:1.6rem;margin-bottom:4px">軟體開發及程式設計</h2>
+      <p style="font-size:.84rem;color:var(--text2);margin-bottom:28px">平均分數 3.75 ／ PR57</p>
+
+      <div class="ucan-layout">
+        <div class="card">
+          <div class="pro-group-label label-strong">優勢能力 ≥ 4.5</div>
+          <div class="pro-item">
+            <span>提供產品維護與客戶支援服務</span>
+            <span class="pro-score">4.50</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pro-group-label label-strong" style="background:rgba(82,199,160,.08);color:var(--green)">中高能力 4.0 ~ 4.4</div>
+          <div class="pro-item">
+            <span>確認軟體開發或程式設計之需求</span>
+            <span class="pro-score">4.33</span>
+          </div>
+          <div class="pro-item">
+            <span>測試程式以確認符合品質要求</span>
+            <span class="pro-score">4.33</span>
+          </div>
+          <div class="pro-item">
+            <span>執行系統導入</span>
+            <span class="pro-score">4.00</span>
+          </div>
+          <div class="pro-item">
+            <span>撰寫技術文件及使用手冊</span>
+            <span class="pro-score">4.00</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pro-group-label label-mid">中等能力 3.0 ~ 3.9</div>
+          <div class="pro-item">
+            <span>依據專案需求進行系統設計</span>
+            <span class="pro-score">3.33</span>
+          </div>
+          <div class="pro-item">
+            <span>進行程式開發及撰寫</span>
+            <span class="pro-score">3.20</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pro-group-label label-weak">尚待加強 &lt; 3.0</div>
+          <div class="pro-item">
+            <span>依據專案需求進行系統分析</span>
+            <span class="pro-score">2.50</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="display:flex;justify-content:flex-end;padding:0 0 60px">
+      <a href="job.html" class="btn btn-fill">下一頁：目標職缺 →</a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>吳育安 · 靜宜大學資訊管理學系 · 本站部署於 Vercel</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

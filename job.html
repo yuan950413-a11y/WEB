@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>目標職缺 — 吳育安</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Noto+Sans+TC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    .page-hero{padding:64px 0 0}
+    .page-hero-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+
+    /* Job posting style */
+    .job-header{
+      background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);
+      padding:36px;margin-bottom:24px;
+    }
+    .job-company{font-family:var(--ff-mono);font-size:.72rem;color:var(--accent);letter-spacing:.1em;margin-bottom:10px}
+    .job-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .job-title{font-family:var(--ff-head);font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;color:var(--text)}
+    .job-badge-big{
+      background:var(--accent);color:#fff;
+      font-family:var(--ff-head);font-weight:700;font-size:1rem;
+      padding:10px 22px;border-radius:var(--r-sm);flex-shrink:0;
+    }
+
+    /* Condition grid */
+    .cond-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+    .cond-item{
+      background:var(--bg-raised);border:1px solid var(--line);border-radius:var(--r-sm);
+      padding:14px 16px;
+    }
+    .cond-key{font-family:var(--ff-mono);font-size:.68rem;color:var(--text3);letter-spacing:.1em;margin-bottom:4px;text-transform:uppercase}
+    .cond-val{font-size:.88rem;color:var(--text)}
+
+    /* Sections */
+    .job-section{margin-bottom:32px}
+    .job-section h3{
+      font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--text3);margin-bottom:14px;
+      padding-bottom:8px;border-bottom:1px solid var(--line);
+    }
+    .job-list li{
+      padding:9px 0 9px 18px;position:relative;
+      font-size:.88rem;color:var(--text2);
+      border-bottom:1px solid rgba(255,255,255,.04);
+    }
+    .job-list li:last-child{border-bottom:none}
+    .job-list li::before{content:'›';position:absolute;left:0;color:var(--accent)}
+
+    /* Match section */
+    .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .match-item{
+      display:flex;gap:14px;align-items:flex-start;
+      background:var(--bg-card);border:1px solid var(--line);
+      border-radius:var(--r);padding:18px;
+      transition:border-color .2s;
+    }
+    .match-item:hover{border-color:rgba(232,124,58,.3)}
+    .match-icon{font-size:1.4rem;flex-shrink:0}
+    .match-title{font-size:.88rem;color:var(--text);font-weight:600;margin-bottom:4px}
+    .match-desc{font-size:.8rem;color:var(--text2);line-height:1.6}
+
+    @media(max-width:768px){
+      .cond-grid{grid-template-columns:1fr}
+      .match-grid{grid-template-columns:1fr}
+      .job-title-row{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">吳育安</a>
+    <div class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="ucan.html">UCAN 診斷</a>
+      <a href="job.html">目標職缺</a>
+      <a href="resume.html">自傳履歷</a>
+      <a href="plan.html">未來規劃</a>
+    </div>
+    <button class="nav-burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer">
+    <a href="index.html">首頁</a>
+    <a href="ucan.html">UCAN 診斷</a>
+    <a href="job.html">目標職缺</a>
+    <a href="resume.html">自傳履歷</a>
+    <a href="plan.html">未來規劃</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="wrap">
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <div>
+          <p class="eyebrow">02 — 目標職缺</p>
+          <h1 class="sec-title">MIS 資訊管理師</h1>
+          <p class="sec-sub">從人力銀行篩選符合資管系背景、具有成長空間的 MIS 相關職缺，作為求職目標。</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="ucan.html" class="btn btn-outline">← UCAN 診斷</a>
+          <a href="resume.html" class="btn btn-outline">自傳履歷 →</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="sec">
+
+      <!-- Job card -->
+      <div class="job-header reveal">
+        <div class="job-company">科技 / 製造業 · 台中市 · MIS 相關職缺</div>
+        <div class="job-title-row">
+          <h2 class="job-title">MIS 資訊管理師<br><small style="font-size:.55em;color:var(--text2);font-family:var(--ff-body);font-weight:400">（IT 維運支援）</small></h2>
+          <span class="job-badge-big">MIS</span>
+        </div>
+        <div class="cond-grid">
+          <div class="cond-item">
+            <div class="cond-key">學歷要求</div>
+            <div class="cond-val">大學以上（資管、資工相關科系）</div>
+          </div>
+          <div class="cond-item">
+            <div class="cond-key">工作經驗</div>
+            <div class="cond-val">不拘（有實習或專題經驗佳）</div>
+          </div>
+          <div class="cond-item">
+            <div class="cond-key">薪資待遇</div>
+            <div class="cond-val">月薪 30,000 ~ 38,000（依能力面議）</div>
+          </div>
+          <div class="cond-item">
+            <div class="cond-key">工作地點</div>
+            <div class="cond-val">台中市</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 職務說明 -->
+      <div class="card reveal">
+        <div class="job-section">
+          <h3>職務說明</h3>
+          <ul class="job-list">
+            <li>負責公司內部資訊系統之維護與管理，含 ERP、HRM 等企業應用系統</li>
+            <li>提供員工電腦設備、網路及軟硬體問題的 IT 支援與故障排除</li>
+            <li>協助規劃與執行系統導入、更新與升級專案</li>
+            <li>建立並維護技術文件、使用手冊及 SOP</li>
+            <li>資訊安全管理，包含帳號權限控管、資料備份與防護措施</li>
+            <li>協同開發部門進行需求訪談、系統測試與驗收</li>
+          </ul>
+        </div>
+
+        <div class="job-section">
+          <h3>必備技能</h3>
+          <div class="chips">
+            <span class="chip">Windows Server 管理</span>
+            <span class="chip">網路設定與排錯</span>
+            <span class="chip">SQL 基礎查詢</span>
+            <span class="chip">技術文件撰寫</span>
+            <span class="chip">溝通協調能力</span>
+            <span class="chip">問題分析與解決</span>
+            <span class="chip">資訊安全觀念</span>
+          </div>
+        </div>
+
+        <div class="job-section">
+          <h3>加分條件</h3>
+          <div class="chips">
+            <span class="chip chip-warm">Python / VBA 自動化</span>
+            <span class="chip chip-warm">ERP 使用或導入經驗</span>
+            <span class="chip chip-warm">資安相關證照</span>
+            <span class="chip chip-warm">專案管理概念</span>
+            <span class="chip chip-warm">Linux 基礎操作</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 為何適合 -->
+      <div style="margin-top:40px">
+        <p class="eyebrow" style="margin-bottom:16px">我為什麼適合這份工作</p>
+        <div class="match-grid reveal">
+          <div class="match-item">
+            <span class="match-icon">🖥</span>
+            <div>
+              <div class="match-title">資訊技術底蘊</div>
+              <div class="match-desc">UCAN 資訊科技應用 4.63 分（PR84），資管課程涵蓋資料庫、網路、OS 管理，具備 MIS 所需技術基礎。</div>
+            </div>
+          </div>
+          <div class="match-item">
+            <span class="match-icon">📄</span>
+            <div>
+              <div class="match-title">文件與測試能力</div>
+              <div class="match-desc">技術文件撰寫 4.00、程式測試 4.33，能清楚記錄 SOP、協助驗收測試，確保系統上線品質。</div>
+            </div>
+          </div>
+          <div class="match-item">
+            <span class="match-icon">🤝</span>
+            <div>
+              <div class="match-title">跨部門溝通協作</div>
+              <div class="match-desc">人際互動 4.50、團隊合作 4.43，擔任系隊控球後衛的經驗讓我習慣在壓力下協調資源、快速反應。</div>
+            </div>
+          </div>
+          <div class="match-item">
+            <span class="match-icon">🛠</span>
+            <div>
+              <div class="match-title">系統導入與維護</div>
+              <div class="match-desc">系統導入 4.00、客戶支援服務 4.50 均為優勢能力，直接對應 MIS 的日常維運工作內容。</div>
+            </div>
+          </div>
+          <div class="match-item">
+            <span class="match-icon">📈</span>
+            <div>
+              <div class="match-title">責任感與自我要求</div>
+              <div class="match-desc">工作責任及紀律 4.43，圍棋的覆盤習慣讓我在遇到問題時能系統性地追究根源，而非迴避。</div>
+            </div>
+          </div>
+          <div class="match-item">
+            <span class="match-icon">🔍</span>
+            <div>
+              <div class="match-title">研究型問題解決</div>
+              <div class="match-desc">職業性格研究型（I）代表擅長深入分析、追根究柢，遇到複雜的系統問題不輕易放棄，持續尋找解法。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div style="display:flex;justify-content:flex-end;padding:0 0 60px">
+      <a href="resume.html" class="btn btn-fill">下一頁：自傳履歷 →</a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>吳育安 · 靜宜大學資訊管理學系 · 本站部署於 Vercel</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
